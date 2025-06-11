@@ -47,6 +47,8 @@ while True:
         print("Qual sera o novo preço?")
         dado = int(input())
         nome_classe.Upt_preco(dado)
+        print(
+            f'O preço do produto {nome_busca} foi atualizada para:{nome_classe.get_preco()}')
 
     elif selecionador == 4:
         print("\n===Atualizador de Quantidade===")
@@ -60,6 +62,19 @@ while True:
             print("!!!Produto encontrado!!!")
         print("Qual sera a nova quantidade do produto?")
         dado = int(input())
-        nome_classe.Upt_quantidde(dado)
+        upt_quan = nome_classe.Upt_quantidde(dado)
+        print(
+            f'A quantidade do produto {nome_busca} foi atualizada para {nome_classe.get_categoria()}')
 
-    if selecionador == 5:
+    elif selecionador == 5:
+        print("\n===Aplicar o desconto===")
+        print("Em qual protudo você deseja aplicar o desconto?")
+        nome_busca = str(input())
+        encontrado = None
+        for produto in produtos:
+            if produto == nome_busca.lower():
+                encontrado = produto
+            print("!!!Produto Encontrado!!!")
+        desconto = int(input("Quanto sera o desconto adicionado ao produto?"))
+        nome_classe.desconto(desconto)
+        nome_classe.Detalhes()
