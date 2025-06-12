@@ -39,13 +39,13 @@ class Produto():
     def Upt_preco(self, novo_preco):
         self.preco = novo_preco
 
-    def Upt_quantidde(self, nova_quantidade):
+    def Upt_quantidade(self, nova_quantidade):
         self.quantidade = nova_quantidade
 
     def desconto(self, porcentagem):
         self.preco = self.preco - self.preco * \
-            porcentagem/100  # Parametos que já existem
+    porcentagem/100  # Parametos que já existem
+        
     # Metodo especial para ser chamado automaticamente ao usar print()
-
     def __str__(self):
         return f"Produto: {self.nome} | Preço: R${self.preco:.2f} | Quantidade: {self.quantidade} | Categoria: {self.categoria}"

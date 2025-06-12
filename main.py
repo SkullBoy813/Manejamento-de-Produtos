@@ -1,7 +1,12 @@
 from Produtos import Produto
 
-produtos = []  # Fora do while true
 
+produtos = [] # Fora do while true
+def buscar_produto(nome_busca, lista_produtos):
+    for produto in lista_produtos:
+        if produto.nome.lower() == nome_busca.lower():
+            return produto
+      
 while True:
 
     print("\n====Menu do Sistema====")
@@ -10,7 +15,6 @@ while True:
     print("[3]Atualizar Preço")
     print("[4]Atualizar Quantidade")
     print("[5]Aplicar desconto")
-    print("[4]Excluir produto")
     print("Qual a opção desejada?")
     selecionador = int(input())
 
@@ -38,43 +42,41 @@ while True:
         print("\n===Atualizador de preço===")
         print("Qual produto você deseja atualizar?")
         nome_busca = str(input())
-        encontrado = None  # Produto é ninguém
-        for produto in produtos:
-            # Se o Produto.get_nome(Nome do produto) for encontrado:
-            if produto == nome_busca.lower():
-                encontrado = produto
-            print("!!!Produto encontrado!!!")
-        print("Qual sera o novo preço?")
-        dado = int(input())
-        nome_classe.Upt_preco(dado)
-        print(
-            f'O preço do produto {nome_busca} foi atualizada para:{nome_classe.get_preco()}')
+        encontrado = buscar_produto(nome_busca, produtos)
+        if encontrado:
+             print("!!!Produto encontrado!!!")
+             print("Qual sera o novo preço?")
+             dado = int(input())
+             nome_classe.Upt_preco(dado)
+             print(f'O preço do produto {nome_busca} foi atualizada para:{nome_classe.get_preco()}')
+        else:
+            print("Produto não encontrado")            
 
     elif selecionador == 4:
         print("\n===Atualizador de Quantidade===")
         print("Qual produto você deseja atualizar?")
         nome_busca = str(input())
-        encontrado = None  # Produto é ninguém
-        for produto in produtos:
-            # Se o Produto.get_nome(Nome do produto) for encontrado:
-            if produto == nome_busca.lower():
-                encontrado = produto
-            print("!!!Produto encontrado!!!")
-        print("Qual sera a nova quantidade do produto?")
-        dado = int(input())
-        upt_quan = nome_classe.Upt_quantidde(dado)
-        print(
-            f'A quantidade do produto {nome_busca} foi atualizada para {nome_classe.get_categoria()}')
-
+        encontrado = buscar_produto(nome_busca, produtos)#a função ira ser usada dentro de uma variavel para verificar se existe ou não
+        if encontrado:
+             print("!!!Produto encontrado!!!")
+             print("Qual sera a nova quantidade do produto?")
+             dado = int(input())
+             encontrado.Upt_quantidade(dado)
+             print(f'A quantidade do produto {nome_busca} foi atualizada para {encontrado.get_quantidade()}')
+        else:
+            print("Produto não encontrado")
+              
     elif selecionador == 5:
         print("\n===Aplicar o desconto===")
         print("Em qual protudo você deseja aplicar o desconto?")
         nome_busca = str(input())
-        encontrado = None
-        for produto in produtos:
-            if produto == nome_busca.lower():
-                encontrado = produto
-            print("!!!Produto Encontrado!!!")
-        desconto = int(input("Quanto sera o desconto adicionado ao produto?"))
-        nome_classe.desconto(desconto)
-        nome_classe.Detalhes()
+        encontrado = buscar_produto(nome_busca, produtos)
+        if encontrado:
+            print("!!!Produto encontrado!!!")
+            desconto = int(input("Quanto sera o desconto adicionado ao produto?"))
+            nome_classe.desconto(desconto)
+            nome_classe.Detalhes()
+        else:
+            print("Produto não encontrado")
+        
+
