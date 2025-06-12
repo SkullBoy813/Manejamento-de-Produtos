@@ -47,8 +47,8 @@ while True:
              print("!!!Produto encontrado!!!")
              print("Qual sera o novo preço?")
              dado = int(input())
-             nome_classe.Upt_preco(dado)
-             print(f'O preço do produto {nome_busca} foi atualizada para:{nome_classe.get_preco()}')
+             encontrado.Upt_preco(dado)
+             print(f'O preço do produto {encontrado} foi atualizada para:{encontrado.get_preco()}')
         else:
             print("Produto não encontrado")            
 
