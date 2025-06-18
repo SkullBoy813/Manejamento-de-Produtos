@@ -62,7 +62,7 @@ while True:
              print("Qual sera a nova quantidade do produto?")
              dado = int(input())
              encontrado.Upt_quantidade(dado)
-             print(f'A quantidade do produto {nome_busca} foi atualizada para {encontrado.get_quantidade()}')
+             print(f'A quantidade do produto {encontrado} foi atualizada para {encontrado.get_quantidade()}')
         else:
             print("Produto não encontrado")
               
@@ -74,8 +74,8 @@ while True:
         if encontrado:
             print("!!!Produto encontrado!!!")
             desconto = int(input("Quanto sera o desconto adicionado ao produto?"))
-            nome_classe.desconto(desconto)
-            nome_classe.Detalhes()
+            encontrado.desconto(desconto)
+            encontrado.Detalhes()
         else:
             print("Produto não encontrado")
         

@@ -4,6 +4,7 @@ class Produto():
         self.preco = preco
         self. quantidade = quantidade
         self.categoria = categoria
+    
     # Gets
 
     def get_nome(self):
@@ -30,6 +31,7 @@ class Produto():
 
     def set_ctegoria(self, Categoria):
         self.categoria = Categoria
+   
     # Metodos
 
     def Detalhes(self):
@@ -47,5 +49,6 @@ class Produto():
     porcentagem/100  # Parametos que já existem
         
     # Metodo especial para ser chamado automaticamente ao usar print()
+   
     def __str__(self):
         return f"Produto: {self.nome} | Preço: R${self.preco:.2f} | Quantidade: {self.quantidade} | Categoria: {self.categoria}"
