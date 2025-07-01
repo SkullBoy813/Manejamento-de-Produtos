@@ -15,6 +15,7 @@ while True:
     print("[3]Atualizar Preço")
     print("[4]Atualizar Quantidade")
     print("[5]Aplicar desconto")
+    print("[6]Excluir prodtuo")
     print("Qual a opção desejada?")
     selecionador = int(input())
 
@@ -73,10 +74,23 @@ while True:
         encontrado = buscar_produto(nome_busca, produtos)
         if encontrado:
             print("!!!Produto encontrado!!!")
-            desconto = int(input("Quanto sera o desconto adicionado ao produto?"))
+            desconto = int(input("Quanto sera o desconto adicionado ao produto? \n"))
             encontrado.desconto(desconto)
             encontrado.Detalhes()
         else:
             print("Produto não encontrado")
+
+    elif selecionador == 6:
+        print("\n===Excluir Produto===")
+        print("Qual Produto será excluido?")
+        nome_busca = str(input())
+        encontrado = buscar_produto(nome_busca, produtos)
+        if encontrado:
+            print("!!!Produto Encontrado!!!")
+            produtos.remove(encontrado)
+            print("Produto Excluido")
+        else:
+            print("Produto não encontrado")
+
         
 
