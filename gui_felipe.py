@@ -1,7 +1,10 @@
 from tkinter import * # type: ignore
-from Produtos import Produto
+from tkinter import ttk
 from funcoes_felipe import label
 from funcoes_felipe import label_entry
+import sqlite3
+
+
 
 #///janela///
 janela = Tk()
@@ -37,6 +40,19 @@ Label_categoria_entry = label_entry("10", "460", "20", "300")
 botao = Button(janela, text="Adicionar Produto", width="15", height="3", fg="White")
 botao.place(x="375", y="425")
 botao.configure(background="#260033")
+
+#///Lista///
+lista_dos_produtos = ttk.Treeview(frame1, columns=("Produto", "Preço", "Quantidade", "Categoria"), show="headings")
+lista_dos_produtos.column("Produto", minwidth=0, width=50)
+lista_dos_produtos.column("Preço", minwidth=0, width=50)
+lista_dos_produtos.column("Quantidade", minwidth=0, width=50)
+lista_dos_produtos.column("Categoria", minwidth=0, width=80)
+
+lista_dos_produtos.heading("Produto", text="Produto")
+lista_dos_produtos.heading("Preço", text="Preço")
+lista_dos_produtos.heading("Quantidade", text="Quantidade")
+lista_dos_produtos.heading("Categoria", text="Categoria")
+lista_dos_produtos.place(width=400, height=180, x=40)
 
 janela.mainloop()
 
