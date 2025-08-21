@@ -1,5 +1,6 @@
 # Manejamento-de-Produtos
 -Processo de desenvolvimento-
+
 1)Comecei com uma pequena sketch das ideias em um caderno de anotações, depois disso fui por em pratica as ideias e os conhecimentos que aprendi entendendo o básico da programação com python.
 
 2)Depois disso peguei um tempo livre que tinha e coloquei a mão na massa. Comecei por um crud basico.
