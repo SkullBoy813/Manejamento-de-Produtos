@@ -9,3 +9,4 @@ def label_entry(x, y, altura, largura):
     Label_name_entry = Entry()
     Label_name_entry.place(x=x, y=y, height=altura, width=largura)
     return Label_name_entry
+
